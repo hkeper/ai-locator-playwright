@@ -1,0 +1,13 @@
+{
+  "name": "ai-locator-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered locator layer on top of Playwright",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
