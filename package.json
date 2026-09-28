@@ -4,10 +4,14 @@
   "private": true,
   "description": "AI-powered locator layer on top of Playwright",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "typecheck": "tsc"
   },
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.63.0"
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.20.4",
+    "dotenv": "^18.0.4",
+    "typescript": "^7.0.2"
   }
 }

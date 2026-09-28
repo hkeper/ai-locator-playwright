@@ -11,7 +11,7 @@
 ## Модуль A. Фундамент (без AI)
 - [x] **Урок 0.** Подготовка: Node/git, GitHub, npm/package.json/lock-файл
 - [x] **Урок 1.** Скелет: package.json построчно, зависимости, .gitignore, первый тест
-- [ ] **Урок 2.** tsconfig.json и playwright.config.ts, dotenv
+- [x] **Урок 2.** tsconfig.json и playwright.config.ts, dotenv
 - [ ] **Урок 3.** TypeScript для проекта: типы, классы, свой Error (`src/ai/types.ts`)
 - [ ] **Урок 4.** Классический Page Object: BasePage, LoginPage, login.spec.ts
 
@@ -32,3 +32,4 @@
 - 2026-09-23: Node v22.17.0, npm 11.19.1, git 2.50. Remote `origin` = `https://github.com/hkeper/ai-locator-playwright`.
 - 2026-09-23, урок 0 пройден: package.json vs lock-файл, semver-диапазоны, `npm install` vs `npm ci`, `node_modules/.bin`. Эксперименты делались в песочнице вне репозитория.
 - 2026-09-26, урок 1 пройден: разбор package.json, `@playwright/test` (транзитивно `playwright`, `playwright-core`), `.gitignore`, первый тест на saucedemo.com без конфига. Web-first assertions: сразу + backoff 20/50/100/100/500 мс, затем каждые 500 мс до `expect.timeout` 5 с. Воркеры: файлы параллельно, тесты в файле последовательно. Обсудили `id`/CSS vs `getByRole` vs `data-test` (i18n-аргумент ученика), в уроке 2 настроить `testIdAttribute: 'data-test'`.
+- 2026-09-28, урок 2 пройден: TypeScript 7.0 (нативный, на Go; платформенные бинарники в optionalDependencies), @types/node@22, dotenv 18. Playwright только транспилирует TS, типы проверяет `npm run typecheck` (tsc, noEmit). С TS 6+ `types` по умолчанию [] — нужно явно `"types": ["node"]` (без этого process не виден; dotenv подтягивает node-типы транзитивно через reference, это маскирует проблему). Конфиг: baseURL из .env с `??`, testIdAttribute=data-test, retries/forbidOnly только на CI, trace on-first-retry. dotenv.config({ quiet: true }) до defineConfig, не перезаписывает уже заданные env. Практики .env/.env.example разобраны; проверку обязательных переменных сделать в уроке 3. В уроке 3 добавить src/ в include tsconfig.
