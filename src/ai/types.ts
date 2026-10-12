@@ -40,10 +40,10 @@ export function describeLocator(spec: LocatorSpec): string {
         case 'css':
             return `locator('${spec.selector}')`;
         case 'text':
-            return `getByText('${spec.text}')`;    
+            return `getByText('${spec.text}')`;
         default: {
             const unreachable: never = spec;
             return unreachable;
-        } 
+        }
     }
 }

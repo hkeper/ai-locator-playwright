@@ -348,7 +348,7 @@ src/ai/types.ts:40:19 - error TS2322: Type '{ strategy: "text"; text: string; }'
 
 `npm test`: `8 passed`. При этом `npm run typecheck` в конце давал 2 ошибки в тестах, их показала IDE.
 
-После исправления: `npm run typecheck` даёт 0 ошибок, `npm test` даёт `8 passed`. Аннотация `LocatorSpec` поставлена только в двух тестах `role`, рядом с ней остался лишний `as const`. В трёх других тестах осталась старая форма. Рекомендация: привести все тесты к виду `const spec: LocatorSpec = {...}` без `as const`.
+После исправления: `npm run typecheck` даёт 0 ошибок, `npm test` даёт `8 passed`. Аннотация `LocatorSpec` поставлена только в двух тестах `role`, рядом с ней остался лишний `as const`. В трёх других тестах осталась старая форма. Рекомендация: привести все тесты к виду `const spec: LocatorSpec = {...}` без `as const`. Исправлено до коммита.
 
 ### Ответы на вопросы урока
 
@@ -475,5 +475,5 @@ describeLocator({ strategy: 'role', role: 'button' });                      // �
 - **Чекпоинт.** `npm run typecheck` даёт 0 ошибок, `npm test` даёт 8 passed.
 - **Ошибки урока.** Путаница «лишнее свойство» и «неправильное свойство», «переменная» вместо «свойство», проверен только `npm test` без `typecheck`, widening и тип `object`, этап падения при пустой переменной.
 
-Открытые замечания: в тестах `describeLocator` смешаны `as const` и аннотация `LocatorSpec`, в `src/ai/types.ts` есть хвостовые пробелы (строки 43 и 47), их уберёт Prettier в уроке 11.
+Замечания ревью исправлены: все тесты `describeLocator` используют аннотацию `LocatorSpec` без `as const`, хвостовые пробелы в `src/ai/types.ts` убраны.
 Следствие для урока 12: на CI нужно задать `BASE_URL` в workflow.
