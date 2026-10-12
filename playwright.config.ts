@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
+import { requireEnv } from './src/config/env';
 
 dotenv.config({ quiet: true });
 
@@ -10,7 +11,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: 'html',
   use: {
-      baseURL: process.env.BASE_URL ?? 'https://www.saucedemo.com/',
+      baseURL: requireEnv('BASE_URL'),
       testIdAttribute: 'data-test',
       trace: 'on-first-retry',
   },
