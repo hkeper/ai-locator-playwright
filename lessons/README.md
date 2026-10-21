@@ -11,6 +11,7 @@
 | [Урок 1](lesson-01.md) | Скелет проекта: package.json, зависимости, .gitignore, первый тест | `lesson-01` |
 | [Урок 2](lesson-02.md) | tsconfig.json, playwright.config.ts, dotenv | `lesson-02` |
 | [Урок 3](lesson-03.md) | TypeScript: типы, размеченные объединения, свой Error, requireEnv | `lesson-03` |
+| [Урок 4](lesson-04.md) | Page Object: BasePage, LoginPage, login.spec.ts | `lesson-04` |
 
 ## Как устроена папка
 
