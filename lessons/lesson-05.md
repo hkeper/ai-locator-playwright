@@ -504,7 +504,9 @@ AiLocatorError: AI is not connected yet and no fallback was given for "${descrip
 
 ## Итог
 
-Коммит кода: `78ddf7c Add changes from lesson 5` (main). Конспект и исправления по ревью — отдельным коммитом.
+Коммиты кода в main: `Add changes from lesson 5` (код урока) и `9caf31c Lesson 5: Custom fixture ai and stub for AiLocatorHelper` (исправления по ревью: шаблонная строка, тест из задания 2). Конспект — PR #1.
+
+- **Чекпоинт.** `npm run typecheck` — 0 ошибок, `npm test` — 13 passed (6 unit + 5 login + 2 ai).
 
 - **Код.** `src/ai/AiLocatorHelper.ts` (контракт `locate(description, { fallback })`, приватный `toLocator` с проверкой полноты через `never`), `src/fixtures/index.ts` (фикстуры `ai` и `loginPage`, реэкспорт `expect`), `tests/ai.spec.ts` (вход через `ai.locate` с запасными локаторами).
 - **Рефакторинг.** `tests/login.spec.ts` переведён с `let` + `beforeEach` на фикстуру `loginPage`.
