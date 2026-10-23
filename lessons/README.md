@@ -12,6 +12,7 @@
 | [Урок 2](lesson-02.md) | tsconfig.json, playwright.config.ts, dotenv | `lesson-02` |
 | [Урок 3](lesson-03.md) | TypeScript: типы, размеченные объединения, свой Error, requireEnv | `lesson-03` |
 | [Урок 4](lesson-04.md) | Page Object: BasePage, LoginPage, login.spec.ts | `lesson-04` |
+| [Урок 5](lesson-05.md) | Фикстуры: `test.extend`, фикстура `ai`, заглушка `AiLocatorHelper` | `lesson-05` |
 
 ## Как устроена папка
 
