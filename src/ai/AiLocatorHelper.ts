@@ -17,7 +17,7 @@ export class AiLocatorHelper {
     if (options.fallback !== undefined) {
         return this.toLocator(options.fallback);
     }
-    throw new AiLocatorError(description, 'AI is not connected yet and no fallback was given for "${description}"');
+    throw new AiLocatorError(description, `AI is not connected yet and no fallback was given for "${description}"`);
   }
 
   private toLocator(spec: LocatorSpec): Locator {

@@ -1,4 +1,5 @@
 import { test, expect } from '../src/fixtures';
+import { AiLocatorError } from '../src/ai/types';
 
 test.describe('ai locator stub', () => {
     test('logs in using fallback locators', async ({ page, ai }) => {
@@ -13,6 +14,11 @@ test.describe('ai locator stub', () => {
         await loginButton.click();
 
         await expect(page).toHaveURL('/inventory.html');
+    });
+
+    test('locate without fallback rejects with AiLocatorError', async ({ ai }) => {
+        await expect(ai.locate('anything')).rejects.toThrow(AiLocatorError);
+        await expect(ai.locate('anything')).rejects.toThrow('no fallback was given for "anything"');
     });
 });
 
